@@ -10,24 +10,38 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public float MovementSpeed;
+    public Animator AnimController;
+
     // Update is called once per frame
     void Update()
     {
         Move();
     }
 
-    public float MovementSpeed;
 
     public void Move()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(MovementSpeed, 0, 0);
+            //transform.Translate(MovementSpeed, 0, 0);
+            //AnimController.Play("Forward");
+            AnimController.SetFloat("right", 0.1f);
+        }
+        else
+        {
+            AnimController.SetFloat("right", -0.1f);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-MovementSpeed, 0, 0);
+            //transform.Translate(-MovementSpeed, 0, 0);
+            //AnimController.Play("Back");
+            AnimController.SetFloat("left", 0.1f);
+        }
+        else
+        {
+            AnimController.SetFloat("left", -0.1f);
         }
     }
 }
