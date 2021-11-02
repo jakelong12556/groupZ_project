@@ -23,7 +23,7 @@ public class Player1Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             //Debug.Log("Space key was pressed.");
-            TakeDamage(10);
+            TakeDamage(5);
         }
     }
 
