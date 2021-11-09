@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
 
-    public static PlayerController instance;
+    public static PlayerController2 instance;
     public Animator AnimController;
 
     public bool atkPressed;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.J))
         {
             AnimController.SetBool("forward", true);
         }
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             AnimController.SetBool("forward", false);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.L))
         {
             AnimController.SetBool("backward", true);
         }
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             AnimController.SetBool("backward", false);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.K))
         {
             AnimController.SetBool("crouch", true);
         }
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.F) && Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Colon) && Input.GetKey(KeyCode.L))
         {
             if (canReceiveInput)
             {
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Colon))
         {
             if (canReceiveInput)
             {
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
         }
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (canReceiveInput)
             {
