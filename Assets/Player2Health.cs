@@ -6,28 +6,26 @@ public class Player2Health : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+
     public HealthBar healthBar;
 
+
+    // Start is called before the first frame update
     void Start()
     {
-        // Set player current health to max health
         currentHealth = maxHealth;
-
-        // Set health bar to max health
-        healthBar.SetMaxHealth(maxHealth); 
+        healthBar.SetMaxHealth(maxHealth);
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Testing
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            //Debug.Log("Space key was pressed.");
             TakeDamage(5);
         }
     }
 
-    // If player has been hit, decrease player health
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
