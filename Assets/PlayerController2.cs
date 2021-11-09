@@ -70,7 +70,7 @@ public class PlayerController2 : MonoBehaviour
     }
     public void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Colon) && Input.GetKey(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.H) && Input.GetKey(KeyCode.K))
         {
             if (canReceiveInput)
             {
@@ -83,7 +83,7 @@ public class PlayerController2 : MonoBehaviour
                 return;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Colon))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             if (canReceiveInput)
             {
@@ -96,7 +96,7 @@ public class PlayerController2 : MonoBehaviour
                 return;
             }
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             if (canReceiveInput)
             {
