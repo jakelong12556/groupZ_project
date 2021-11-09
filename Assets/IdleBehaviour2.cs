@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleBehaviour : StateMachineBehaviour
+public class IdleBehaviour2 : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -11,26 +11,27 @@ public class IdleBehaviour : StateMachineBehaviour
     //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (PlayerController.instance.inputReceived)
+        if (PlayerController2.instance.inputReceived)
         {
             animator.SetTrigger("AttackOne");
-            PlayerController.instance.InputManager();
-            PlayerController.instance.inputReceived = false;
+            PlayerController2.instance.InputManager();
+            PlayerController2.instance.inputReceived = false;
         }
 
-        if (PlayerController.instance.inputReceived2)
+        if (PlayerController2.instance.inputReceived2)
         {
             animator.SetTrigger("AttackMTwo");
-            PlayerController.instance.InputManager();
-            PlayerController.instance.inputReceived2 = false;
+            PlayerController2.instance.InputManager();
+            PlayerController2.instance.inputReceived2 = false;
         }
-        if (PlayerController.instance.inputReceived3)
+        if (PlayerController2.instance.inputReceived3)
         {
             animator.SetTrigger("AttackSweep");
-            PlayerController.instance.InputManager();
-            PlayerController.instance.inputReceived3 = false;
+            PlayerController2.instance.InputManager();
+            PlayerController2.instance.inputReceived3 = false;
         }
     }
 

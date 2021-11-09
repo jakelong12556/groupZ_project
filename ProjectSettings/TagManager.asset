@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Shadow
   - Collide
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
