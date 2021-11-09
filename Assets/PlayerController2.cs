@@ -36,79 +36,21 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         Attack();
-        Move();
+        //Move();
     }
 
 
     public void Move()
     {
-        if (Input.GetKey(KeyCode.J))
-        {
             AnimController.SetBool("forward", true);
-        }
-        else
-        {
-            AnimController.SetBool("forward", false);
-        }
-
-        if (Input.GetKey(KeyCode.L))
-        {
-            AnimController.SetBool("backward", true);
-        }
-        else
-        {
-            AnimController.SetBool("backward", false);
-        }
-        if (Input.GetKey(KeyCode.K))
-        {
-            AnimController.SetBool("crouch", true);
-        }
-        else
-        {
-            AnimController.SetBool("crouch", false);
-        }
     }
     public void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Colon) && Input.GetKey(KeyCode.L))
-        {
-            if (canReceiveInput)
-            {
-                inputReceived3 = true;
-                canReceiveInput = false;
-            }
-            else
-            {
-                Debug.Log("no sweep");
-                return;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Colon))
-        {
             if (canReceiveInput)
             {
                 inputReceived = true;
                 canReceiveInput = false;
             }
-            else
-            {
-                Debug.Log("no punch");
-                return;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (canReceiveInput)
-            {
-                inputReceived2 = true;
-                canReceiveInput = false;
-            }
-            else
-            {
-                Debug.Log("no punch2");
-                return;
-            }
-        }
 
     }
     public void InputManager()
