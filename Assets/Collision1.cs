@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Collision1 : MonoBehaviour
 {
+    public Player2Health player2Health;
+
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player2")
         {
-            Debug.Log("Enter");
+            //player2Health.TakeDamage(5);
+            //Debug.Log("Enter");
         }
     }
 
@@ -17,7 +20,7 @@ public class Collision1 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player2")
         {
-            Debug.Log("stay");
+            //Debug.Log("stay");
         }
     }
 
@@ -25,7 +28,7 @@ public class Collision1 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player2")
         {
-            Debug.Log("exit");
+            //Debug.Log("exit");
         }
     }
 

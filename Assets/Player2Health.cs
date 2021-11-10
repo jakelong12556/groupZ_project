@@ -18,15 +18,15 @@ public class Player2Health : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            TakeDamage(5);
-        }
-    }
+ //   void Update()
+   // {
+     //   if (Input.GetKeyDown(KeyCode.Alpha2))
+       // {
+        //    TakeDamage(5);
+        //}
+   // }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
