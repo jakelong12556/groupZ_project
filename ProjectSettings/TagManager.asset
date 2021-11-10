@@ -8,8 +8,6 @@ TagManager:
   - Collide
   - Player1
   - Player2
-  - Player1Cam
-  - Player2Cam
   layers:
   - Default
   - TransparentFX
