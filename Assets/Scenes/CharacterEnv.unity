@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -446,7 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1685a7520fc1e284b972e1f3a073df9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player2Health: {fileID: 0}
+  player1Health: {fileID: 408727133}
+  player2Health: {fileID: 201790608}
 --- !u!54 &180581944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -609,7 +610,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 483994249}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -947,8 +948,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1954691551}
-  - {fileID: 201790609}
   - {fileID: 950966263}
+  - {fileID: 201790609}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -985,7 +986,7 @@ Transform:
   - {fileID: 2028629701}
   - {fileID: 1547879938}
   m_Father: {fileID: 563935372}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563935367
 GameObject:
@@ -1015,8 +1016,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408727134}
-  - {fileID: 548171486}
   - {fileID: 894449761}
+  - {fileID: 548171486}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1341,7 +1342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1685a7520fc1e284b972e1f3a073df9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player2Health: {fileID: 0}
+  player1Health: {fileID: 408727133}
+  player2Health: {fileID: 201790608}
 --- !u!1818360608 &913677446
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -2992,7 +2994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd17a65cc067414fa7d5ef31e63529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player2Health: {fileID: 201790608}
 --- !u!1 &2146918645
 GameObject:
   m_ObjectHideFlags: 0

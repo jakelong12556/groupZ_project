@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RighthandCollision : MonoBehaviour
 {
-    public Player2Health player2Health;
+    //public Player2Health player2Health;
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
@@ -14,7 +14,7 @@ public class RighthandCollision : MonoBehaviour
         {   
 
             Debug.Log("punchcontacted");
-            player2Health.TakeDamage(5);
+           // player2Health.TakeDamage(5);
         }
     }
 
@@ -23,7 +23,7 @@ public class RighthandCollision : MonoBehaviour
         if (other.gameObject.tag == "Player2")
 
         {
-            //Debug.Log("punchstaying");
+            Debug.Log("punchstaying");
         }
     }
 
@@ -31,7 +31,7 @@ public class RighthandCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Player2")
         {
-            //Debug.Log("punchgone");
+            Debug.Log("punchgone");
         }
     }
 

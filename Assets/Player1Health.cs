@@ -34,13 +34,13 @@ public class Player1Health : MonoBehaviour
 
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
 
-    void ResetHealth()
+    public void ResetHealth()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);

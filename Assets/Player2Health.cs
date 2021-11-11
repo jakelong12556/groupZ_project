@@ -32,7 +32,7 @@ public class Player2Health : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    void ResetHealth()
+    public void ResetHealth()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
