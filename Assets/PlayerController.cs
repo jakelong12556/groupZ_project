@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public bool inputReceived2;
     public bool inputReceived3;
 
+    public Vector3 pos;
+
 
     private void Awake()
     {
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
         inputReceived = false;
         inputReceived2 = false;
         inputReceived3 = false;
+        pos = new Vector3(transform.position.x - 100, transform.position.y, transform.position.z);
+
     }
 
 
@@ -37,6 +41,17 @@ public class PlayerController : MonoBehaviour
     {
         Attack();
         Move();
+        Translate();
+    }
+
+    public void Translate()
+    {
+        AnimatorStateInfo stateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Head Hit"))
+        {
+            float step = 0.3f * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, pos, step);
+        }
     }
 
 

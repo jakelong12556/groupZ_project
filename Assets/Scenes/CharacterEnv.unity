@@ -621,6 +621,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 608321761475470972, guid: 1c12e46db15ce864998a6c7c6b812143, type: 3}
   m_PrefabInstance: {fileID: 1526614637}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &358193733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3667946887678727147, guid: 1c12e46db15ce864998a6c7c6b812143, type: 3}
+  m_PrefabInstance: {fileID: 1526614637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &373830965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2114,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427390603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2706,11 +2711,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547879937}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1606865319 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 1c12e46db15ce864998a6c7c6b812143, type: 3}
-  m_PrefabInstance: {fileID: 1526614637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1636151189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143282803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09486162, y: 1.7928414, z: -0.8291881}
+  m_LocalPosition: {x: -0.09486162, y: 1.7528416, z: -0.9727681}
   m_LocalScale: {x: 0.47697848, y: 0.38437974, z: 0.34592637}
   m_Children: []
   m_Father: {fileID: 548171486}
@@ -3374,15 +3374,15 @@ PositionConstraint:
   m_GameObject: {fileID: 2143282803}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.09486162, y: 1.7928414, z: -0.8291881}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_TranslationAtRest: {x: -0.09486162, y: 1.7528416, z: -0.9727681}
+  m_TranslationOffset: {x: 0, y: -0.03999996, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
   m_IsContraintActive: 1
   m_IsLocked: 0
   m_Sources:
-  - sourceTransform: {fileID: 1606865319}
+  - sourceTransform: {fileID: 358193733}
     weight: 1
 --- !u!135 &2143282806
 SphereCollider:
@@ -3395,7 +3395,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2143282807
 MeshRenderer:
@@ -3459,6 +3459,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd17a65cc067414fa7d5ef31e63529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player2Health: {fileID: 201790608}
+  AnimControllerPlayer1: {fileID: 894449762}
+  AnimControllerPlayer2: {fileID: 950966262}
+  player1: {fileID: 894449761}
+  player2: {fileID: 950966263}
+  punchConnected: 0
 --- !u!1 &2146918645
 GameObject:
   m_ObjectHideFlags: 0

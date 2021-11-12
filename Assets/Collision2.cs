@@ -14,7 +14,7 @@ public class Collision2 : MonoBehaviour
         if (other.gameObject.tag == "Player1")
         {
             //player1Health.TakeDamage(5);
-            Debug.Log("Enter");
+            Debug.Log("Enterplayer1");
         }
 
         // else if (other.gameObject.tag == "Player2")
@@ -27,7 +27,7 @@ public class Collision2 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player1")
         {
-            Debug.Log("stayplayer1");
+            //Debug.Log("stayplayer1");
         }
     }
 
@@ -35,7 +35,7 @@ public class Collision2 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player1")
         {
-            Debug.Log("exitplayer1");
+            //Debug.Log("exitplayer1");
         }
     }
 }
