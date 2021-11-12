@@ -16,6 +16,9 @@ public class PlayerController2 : MonoBehaviour
     public bool inputReceived3;
     public Vector3 pos;
 
+    public float doubleTap = 0.2f;
+    public int buttonCount = 0;
+
 
     private void Awake()
     {
@@ -38,7 +41,11 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         Attack();
-        Move();
+        DoubleTap();
+        if (doubleTap < 0.001f)
+        {
+            Move();
+        }
         Translate();
     }
 
@@ -55,6 +62,49 @@ public class PlayerController2 : MonoBehaviour
         {
             float step = 0.6f * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, pos, step);
+        }
+    }
+
+
+    public void DoubleTap()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (doubleTap > 0 && buttonCount == 1/*Number of Taps you want Minus One*/)
+            {
+                //Has double tapped
+                AnimController.SetTrigger("DashBack");
+            }
+            else
+            {
+                doubleTap = 0.2f;
+                buttonCount += 1;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (doubleTap > 0 && buttonCount == 1/*Number of Taps you want Minus One*/)
+            {
+                //Has double tapped
+                AnimController.SetTrigger("DashForward");
+            }
+            else
+            {
+                doubleTap = 0.2f;
+                buttonCount += 1;
+            }
+        }
+
+        if (doubleTap > 0)
+        {
+
+            doubleTap -= 1.0f * Time.deltaTime;
+
+        }
+        else
+        {
+            buttonCount = 0;
         }
     }
 

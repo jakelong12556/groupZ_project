@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         inputReceived = false;
         inputReceived2 = false;
         inputReceived3 = false;
-        pos = new Vector3(transform.position.x + 100, transform.position.y, transform.position.z);
+        pos = new Vector3(transform.position.x - 100, transform.position.y, transform.position.z);
 
     }
 
@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour
         }
         Translate();
     }
+
+
 
     public void DoubleTap()
     {
@@ -101,6 +103,11 @@ public class PlayerController : MonoBehaviour
         if (stateInfo.IsName("Head Hit"))
         {
             float step = 0.3f * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, pos, step);
+        }
+        if (stateInfo.IsName("Block"))
+        {
+            float step = 0.6f * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, pos, step);
         }
     }
