@@ -7,17 +7,17 @@ public class RecoveryOneP2 : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PlayerController2.instance.canReceiveInput = true;
+        AIPlayer.instance.canReceiveInput = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (PlayerController2.instance.inputReceived)
+        if (AIPlayer.instance.inputReceived)
         {
             animator.SetTrigger("AttackTwo");
-            PlayerController2.instance.InputManager();
-            PlayerController2.instance.inputReceived = false;
+            AIPlayer.instance.InputManager();
+            AIPlayer.instance.inputReceived = false;
         }
     }
 

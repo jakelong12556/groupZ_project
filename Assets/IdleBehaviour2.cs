@@ -14,24 +14,24 @@ public class IdleBehaviour2 : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (PlayerController2.instance.inputReceived)
+        if (AIPlayer.instance.inputReceived)
         {
             animator.SetTrigger("AttackOne");
-            PlayerController2.instance.InputManager();
-            PlayerController2.instance.inputReceived = false;
+            AIPlayer.instance.InputManager();
+            AIPlayer.instance.inputReceived = false;
         }
-
-        if (PlayerController2.instance.inputReceived2)
+        
+        if (AIPlayer.instance.inputReceived2)
         {
             animator.SetTrigger("AttackMTwo");
-            PlayerController2.instance.InputManager();
-            PlayerController2.instance.inputReceived2 = false;
+            AIPlayer.instance.InputManager();
+            AIPlayer.instance.inputReceived2 = false;
         }
-        if (PlayerController2.instance.inputReceived3)
+        if (AIPlayer.instance.inputReceived3)
         {
             animator.SetTrigger("AttackSweep");
-            PlayerController2.instance.InputManager();
-            PlayerController2.instance.inputReceived3 = false;
+            AIPlayer.instance.InputManager();
+            AIPlayer.instance.inputReceived3 = false;
         }
     }
 

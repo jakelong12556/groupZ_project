@@ -30,6 +30,25 @@ public class Timer : MonoBehaviour
             countdownText.text = currentTime.ToString("0");
         }
 
+        if (currentTime >= 55 && currentTime <= 60)
+        {
+            messageText.text = "A: move left \n S: crouch \n D: move right \n F: attack \n FF: combo attack";
+        }
+        else messageText.text = "";
+
+
+
+        if (player1Health.currentHealth == 0)
+        {
+            messageText.text = "KO! \n PLAYER 2 WINS!";
+        }
+
+        else if (player2Health.currentHealth == 0)
+        {
+            messageText.text = "KO! \n PLAYER 1 WINS!";
+        }
+
+
         if (currentTime <= 0)
         {
             currentTime = 0;
@@ -37,6 +56,7 @@ public class Timer : MonoBehaviour
             if (player1Health.currentHealth > player2Health.currentHealth)
             {
                 messageText.text = "PLAYER 1 WINS!";
+               
             }
             else if (player1Health.currentHealth < player2Health.currentHealth)
             {
@@ -50,4 +70,5 @@ public class Timer : MonoBehaviour
         }
 
     }
+
 }
