@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         inputReceived = false;
         inputReceived2 = false;
         inputReceived3 = false;
-        pos = new Vector3(transform.position.x - 100, transform.position.y, transform.position.z);
+        pos = new Vector3(transform.position.x + 100, transform.position.y, transform.position.z);
 
     }
 
@@ -46,11 +46,9 @@ public class PlayerController : MonoBehaviour
     {
         Attack();
         DoubleTap();
-        Debug.Log(doubleTap);
         if (doubleTap < 0.001f)
         {
             Move();
-
         }
         Translate();
     }
@@ -59,13 +57,24 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-
-
             if (doubleTap > 0 && buttonCount == 1/*Number of Taps you want Minus One*/)
             {
                 //Has double tapped
-                Debug.Log("DoubledTappd");
                 AnimController.SetTrigger("DashBack");
+            }
+            else
+            {
+                doubleTap = 0.2f;
+                buttonCount += 1;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (doubleTap > 0 && buttonCount == 1/*Number of Taps you want Minus One*/)
+            {
+                //Has double tapped
+                AnimController.SetTrigger("DashForward");
             }
             else
             {
@@ -95,7 +104,6 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, pos, step);
         }
     }
-
 
     public void Move()
     {
