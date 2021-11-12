@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     public bool inputReceived2;
     public bool inputReceived3;
 
+    public float doubleTap = 0.2f;
+    public int buttonCount = 0;
+
+
+
     public Vector3 pos;
 
 
@@ -40,8 +45,45 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Attack();
-        Move();
+        DoubleTap();
+        Debug.Log(doubleTap);
+        if (doubleTap < 0.001f)
+        {
+            Move();
+
+        }
         Translate();
+    }
+
+    public void DoubleTap()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+
+
+            if (doubleTap > 0 && buttonCount == 1/*Number of Taps you want Minus One*/)
+            {
+                //Has double tapped
+                Debug.Log("DoubledTappd");
+                AnimController.SetTrigger("DashBack");
+            }
+            else
+            {
+                doubleTap = 0.2f;
+                buttonCount += 1;
+            }
+        }
+
+        if (doubleTap > 0)
+        {
+
+            doubleTap -= 1.0f * Time.deltaTime;
+
+        }
+        else
+        {
+            buttonCount = 0;
+        }
     }
 
     public void Translate()

@@ -50,6 +50,12 @@ public class PlayerController2 : MonoBehaviour
             float step = 0.3f * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, pos, step);
         }
+
+        if (stateInfo.IsName("Block"))
+        {
+            float step = 0.6f * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, pos, step);
+        }
     }
 
     public void Move()

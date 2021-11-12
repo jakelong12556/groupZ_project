@@ -19,16 +19,17 @@ public class RighthandCollision : MonoBehaviour
         punchConnected = false;
 
         if (other.gameObject.tag == "Player2")
-        {   
+        {
 
             AnimatorStateInfo stateInfo = AnimControllerPlayer1.GetCurrentAnimatorStateInfo(0);
             //AnimatorClipInfo[] clipInfo = AnimControllerPlayer1.GetCurrentAnimatorClipInfo(0);
 
             Debug.Log("punchcontacted");
-            
-            if (stateInfo.IsName("Forward")){
+
+            if (stateInfo.IsName("Forward"))
+            {
                 Debug.Log("HandContacted");
-            }       
+            }
 
 
 
@@ -41,20 +42,34 @@ public class RighthandCollision : MonoBehaviour
 
         {
             AnimatorStateInfo stateInfo = AnimControllerPlayer1.GetCurrentAnimatorStateInfo(0);
+            AnimatorStateInfo stateInfo2 = AnimControllerPlayer2.GetCurrentAnimatorStateInfo(0);
 
-            Debug.Log("punchstaying");
-            if (stateInfo.IsName("Punch_1_Active") && !punchConnected){
-                
+
+            if (stateInfo.IsName("Punch_1_Active") && !punchConnected)
+            {
+
                 player2Health.TakeDamage(5);
                 AnimControllerPlayer2.SetTrigger("HeadHit");
 
                 punchConnected = true;
 
-            } 
-            if(stateInfo.IsName("Punch_2_Active") && !punchConnected){
+            }
+
+            if (stateInfo2.IsName("Back") && !punchConnected && !stateInfo.IsName("Forward"))
+            {
+                Debug.Log("Blocking");
+                AnimControllerPlayer2.SetTrigger("Block");
+
+                punchConnected = true;
+
+            }
+
+
+            if (stateInfo.IsName("Punch_2_Active") && !punchConnected)
+            {
                 player2Health.TakeDamage(5);
                 AnimControllerPlayer2.SetTrigger("BodyHit");
-                
+
                 punchConnected = true;
 
             }
@@ -69,7 +84,7 @@ public class RighthandCollision : MonoBehaviour
             Debug.Log("punchgone");
         }
     }
-    
+
     public void PunchManager()
     {
         if (!punchConnected)
